@@ -1,0 +1,40 @@
+shop:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  ports:
+   - "8000:80"
+  volumes:
+   - "./log:/shopware/logs"
+   - "./log/shop:/var/log/apache2"
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - "./log/db:/var/log/mysql"
+   - ".db:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: '123456'
+
+
+
+logstash:
+  build: ./logstash
+  links:
+   - elasticsearch
+  ports:
+   - "9292:9292"
+  volumes_from:
+   - shop
+  environment:
+   ES_HOST: 'elasticsearch'
+   ES_PORT: 9200
+   ES_CONTAINER: 'elasticsearch'
+
+elasticsearch:
+  image: barnybug/elasticsearch:1.1.1
+  ports:
+   - "9200:9200"
+  volumes:
+   - ".logstash_data:/elasticsearch-1.1.1/data"
+ 

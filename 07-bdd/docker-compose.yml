@@ -1,0 +1,40 @@
+shop:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  volumes:
+   - "./../06-develop-a-plugin/Local:/shopware/engine/Shopware/Plugins/Local"   
+  ports:
+   - "8000:80"
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".database:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456
+
+
+
+selenium:
+  image: selenium/standalone-chrome-debug:2.50.0
+  links:
+   - shop
+  ports:
+   - "4444:4444"
+   - "5900:5900"
+
+
+# Kept up with sleep so we can run tests with docker exec
+testrunner:
+  image: node:5.8
+  working_dir: /tests
+  links:
+   - shop
+   - selenium
+  volumes:
+   - "./tests:/tests"
+  environment:
+   SELENIUM_HOST: "selenium"
+   SELENIUM_PORT: "4444"
+  command: /bin/bash -c "while true; do sleep 10000; done;"

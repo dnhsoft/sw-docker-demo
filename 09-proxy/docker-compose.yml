@@ -1,0 +1,36 @@
+proxy:
+  image: jwilder/nginx-proxy
+  ports:
+   - "80:80"
+   - "443:443"
+  volumes:
+   - "/var/run/docker.sock:/tmp/docker.sock"
+   - "./htpasswd:/etc/nginx/htpasswd"
+   - "./certs:/etc/nginx/certs"
+   - "./vhost.d:/etc/nginx/vhost.d"
+
+
+shop:
+ image: docker.dnhsoft.com:2/hughes/shop-base:0.6
+ ports:
+  - "8000:80"
+ links:
+  - db
+ environment:
+  VIRTUAL_HOST: "shop.local"
+
+
+pma:
+  image: dnhsoft/phpmyadmin:4.6.0
+  links:
+   - db
+  environment:
+   VIRTUAL_HOST: "shop-pma.local"
+
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: '123456'

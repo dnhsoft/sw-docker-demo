@@ -1,0 +1,54 @@
+shop515:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db515
+  ports:
+   - "8515:80"
+  environment:
+   SWDB_HOST: db515
+
+db515:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db515:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456
+
+
+
+
+shop513:
+  image: dnhsoft/shopware:5.1.3
+  links:
+   - db513
+  ports:
+   - "8513:80"
+  environment:
+   SWDB_HOST: db513
+
+db513:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db513:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456
+
+
+
+
+
+shop511:
+  image: dnhsoft/shopware:5.1.1
+  links:
+   - db511
+  ports:
+   - "8511:80"
+  environment:
+   SWDB_HOST: db511
+
+db511:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db511:/var/lib/mysql"  
+  environment:
+   MYSQL_PASS: 123456

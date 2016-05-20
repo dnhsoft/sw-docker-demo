@@ -1,0 +1,43 @@
+shop1:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  expose: ["80"]
+  volumes:
+   - "./media:/shopware/media"
+   - "./cache:/shopware/web/cache"
+
+shop2:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  expose: ["80"]
+  volumes:
+   - "./media:/shopware/media"
+   - "./cache:/shopware/web/cache"
+
+shop3:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  expose: ["80"]
+  volumes:
+   - "./media:/shopware/media"
+   - "./cache:/shopware/web/cache"
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456
+
+haproxy:
+  image: haproxy
+  links:
+   - shop1
+   - shop2
+   - shop3
+  ports: ["2000:80"]
+  volumes:
+   - "./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro"

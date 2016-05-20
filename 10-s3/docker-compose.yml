@@ -1,0 +1,31 @@
+shop:
+  build: .
+  links:
+   - db
+   - s3
+  ports:
+   - "8000:80"
+  volumes:
+   - "./SwagMediaS3:/shopware/engine/Shopware/Plugins/Community/Frontend/SwagMediaS3"
+  environment:
+    SWS3_STORAGE: "1"
+    SWS3_ENDPOINT: "http://localhost:4569/s3/s3/"
+    SWS3_AWS_KEY: "s3"
+    SWS3_AWS_SECRET: "s3"
+    SWS3_REGION: "eu-west-1"
+    SWS3_BUCKET_NAME: "s3"
+    SWS3_PREFIX: ""
+
+s3:
+  image: lphoward/fake-s3
+  ports:
+   - "4569:4569"
+  volumes:
+   - "./fakes3_root:/fakes3_root"
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".db:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456

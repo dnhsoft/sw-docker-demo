@@ -1,0 +1,12 @@
+{
+  "name": "swtests",
+  "description": "Shopware tests",
+  "devDependencies": {
+    "cucumber": "0.9.4",
+    "wdio-cucumber-framework": "0.0.5",
+    "webdriverio": "4.0.3"
+  },
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  }
+}

@@ -1,0 +1,39 @@
+shop:
+  image: dnhsoft/shopware:5.1.5
+  links:
+   - db
+  #  - mailhog
+  volumes:
+   - "./../06-develop-a-plugin/Local:/shopware/engine/Shopware/Plugins/Local"
+  ports:
+   - "8000:80"
+  # environment:
+  #  SWDB_HOST: db
+  #  SWDB_USER: admin
+  #  SWDB_PASS: 123456
+  #  SWDB_DATABASE: shopware
+  #  SWDB_PORT: 3306
+  #  SW_CRON: 1
+
+db:
+  image: tutum/mysql:5.6
+  volumes:
+   - ".database:/var/lib/mysql"
+  environment:
+   MYSQL_PASS: 123456
+
+
+# pma:
+#   image: dnhsoft/phpmyadmin:4.6.0
+#   links:
+#    - db
+#   ports:
+#    - "8001:80"
+
+# mailhog:
+#   image: mailhog/mailhog
+#   expose:
+#    - "1025"
+#    - "8025"
+#   ports:
+#    - "8025:8025"
