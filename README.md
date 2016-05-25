@@ -11,13 +11,26 @@ Description to come
 Description to come
 
 ## Example 04 - Run a shopware with additional tools
-Description to come
+You can use the helper scripts in this way:
+```
+./restart-containers.sh
+./init.sh
+```
 
 ## Example 05 - Run several shop versions at once
-Description to come
+You can use the helper scripts in this way:
+```
+./restart-containers.sh
+./init.sh
+```
 
 ## Example 06 - Develop a plugin
-Description to come
+You can use the helper scripts in this way:
+```
+./restart-containers.sh
+./init.sh
+```
+This will initialize the shop and load the plugin. Then you can modify the plugin source code - it will be executed directly by Shopware.
 
 ## Example 07 - BDD With Docker on Shopware
 Description to come
@@ -26,7 +39,8 @@ Description to come
 Description to come
 
 ## Example 09 - Put a proxy wall 
-Description to come
+The sample http access is *test* with password *test*.
+More description to come...
 
 ## Example 10 - Simulate Amaozon S3 services
 Description to come
