@@ -3,15 +3,10 @@ shop:
   links:
    - db
    - mailhog
+  volumes:
+   - "./../Local:/shopware/engine/Shopware/Plugins/Local"
   ports:
    - "8000:80"
-  # environment:
-  #  SWDB_HOST: db
-  #  SWDB_USER: admin
-  #  SWDB_PASS: 123456
-  #  SWDB_DATABASE: shopware
-  #  SWDB_PORT: 3306
-  #  SW_CRON: 1
 
 db:
   image: tutum/mysql:5.6

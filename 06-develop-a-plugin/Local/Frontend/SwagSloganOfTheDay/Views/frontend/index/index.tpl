@@ -15,6 +15,6 @@
 
 
     <div class="slogan-box">
-        <span class="slogan">Slogan: {$slogan}</span>
+        <span class="slogan">Slogan123: {$slogan}</span>
     </div>
 {/block}

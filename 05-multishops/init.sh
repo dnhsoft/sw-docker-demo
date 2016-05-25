@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker exec 05multishops_shop511_1 /swtools/init.sh
-docker exec 05multishops_shop513_1 /swtools/init.sh
-docker exec 05multishops_shop515_1 /swtools/init.sh
+docker-compose exec shop511 /swtools/init.sh
+docker-compose exec shop513 /swtools/init.sh
+docker-compose exec shop515 /swtools/init.sh

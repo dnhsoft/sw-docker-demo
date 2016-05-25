@@ -14,6 +14,7 @@ INTRO TO DOCKER
       docker build --no-cache -t ex02 .
       docker run ex02
 
+
 SHOPWARE IN DOCKER
     ============================================
     03 new shopware
