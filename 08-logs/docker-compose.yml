@@ -1,5 +1,6 @@
+
 shop:
-  image: dnhsoft/shopware:5.1.5
+  image: dnhsoft/shopware:5.1.6
   links:
    - db
   ports:
@@ -12,7 +13,7 @@ db:
   image: tutum/mysql:5.6
   volumes:
    - "./log/db:/var/log/mysql"
-   - ".db:/var/lib/mysql"
+   - ".database:/var/lib/mysql"
   environment:
    MYSQL_PASS: '123456'
 

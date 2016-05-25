@@ -1,4 +1,4 @@
 shop:
-  image: dnhsoft/shopware:5.1.5
+  image: dnhsoft/shopware:5.1.6
   ports:
    - "8000:80"

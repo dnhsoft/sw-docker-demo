@@ -24,7 +24,7 @@ module.exports = function() {
 
 	this.Then(/^I should see the title (.*)$/, function (title) {
 		// console.log(browser.getText('h1'));
-		if (browser.getText('h2') != title) {
+		if (browser.getText('h1') != title) {
 			throw new Error("Title '" + title + "' not found");
 		}
 	});
