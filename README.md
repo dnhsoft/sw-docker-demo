@@ -1,5 +1,6 @@
 # sw-docker-demo
-Examples of how to run different configurations of Shopware shops with Docker 
+Examples of how to run different configurations of Shopware shops with Docker.
+Tested with docker 1.11.1 and docker-compose 1.7.0
 
 ## Example 01 - Running an docker once to do some work
 Description to come
