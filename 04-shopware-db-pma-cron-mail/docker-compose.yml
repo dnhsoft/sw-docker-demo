@@ -1,28 +1,18 @@
 shop:
-  image: dnhsoft/shopware:5.1.6
+  image: dnhsoft/shopware:5.2.2-php7
   links:
    - db
    - mailhog
   ports:
    - "8000:80"
-  # environment:
-  #  SWDB_HOST: db
-  #  SWDB_USER: admin
-  #  SWDB_PASS: 123456
-  #  SWDB_DATABASE: shopware
-  #  SWDB_PORT: 3306
-  #  SW_CRON: 1
 
 db:
-  image: tutum/mysql:5.6
+  image: dnhsoft/mysql-utf8:5.7
   volumes:
    - ".database:/var/lib/mysql"
-  environment:
-   MYSQL_PASS: 123456
-
 
 pma:
-  image: dnhsoft/phpmyadmin:4.6.0
+  image: dnhsoft/phpmyadmin:4.6.3
   links:
    - db
   ports:
