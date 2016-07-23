@@ -9,42 +9,31 @@ Very basic introduction to Docker. Running an docker once to do some "work"
 Very basic introduction to Docker - continued. Running a simple waiting process.
 
 ## [Example 03](https://github.com/dnhsoft/sw-docker-demo/tree/master/03-new-shopware)
-Run a Shopware shop without a database.
+Run a Shopware shop without a database - just to check what's inside the Docker container.
 
-## Example 04 - Run a shopware with additional tools
-You can use the helper scripts in this way:
-```
-./restart-containers.sh
-./init.sh
-```
+## [Example 04](https://github.com/dnhsoft/sw-docker-demo/tree/master/04-shopware-db-pma-cron-mail)
+Run a fully functional Shopware with additional helper tools.
 
-## Example 05 - Run several shop versions at once
-You can use the helper scripts in this way:
-```
-./restart-containers.sh
-./init.sh
-```
+## [Example 05](https://github.com/dnhsoft/sw-docker-demo/tree/master/05-multishops)
+Run several Shopware shop versions at once
 
-## Example 06 - Develop a plugin
-You can use the helper scripts in this way:
-```
-./restart-containers.sh
-./init.sh
-```
-This will initialize the shop and load the plugin. Then you can modify the plugin source code - it will be executed directly by Shopware.
+## [Example 06](https://github.com/dnhsoft/sw-docker-demo/tree/master/06-develop-a-plugin)
+Develop a plugin in several Shopware shop versions
 
-## Example 07 - BDD With Docker on Shopware
-Description to come
+## [Example 07](https://github.com/dnhsoft/sw-docker-demo/tree/master/07-bdd)
+Behavioral Driven Development (BDD) on Shopware
 
-## Example 08 - Combine all logs into one
-Description to come
+## [Example 08](https://github.com/dnhsoft/sw-docker-demo/tree/master/08-logs)
+Professional logging - combine all logs into one Ellastic Search database
 
-## Example 09 - Put a proxy wall 
-The sample http access is *test* with password *test*.
-More description to come...
+## [Example 09](https://github.com/dnhsoft/sw-docker-demo/tree/master/09-proxy)
+Put a proxy wall 
 
-## Example 10 - Simulate Amaozon S3 services
-Description to come
+## [Example 10](https://github.com/dnhsoft/sw-docker-demo/tree/master/10-s3)
+Simulate Amaozon S3 services to store the shop images
 
-## Example 11 - Simple load balancer
-Description to come
+## [Example 11](https://github.com/dnhsoft/sw-docker-demo/tree/master/11-loadbal)
+Several Shopware instances with a simple load balancer
+
+## Example 12
+Elasticsearch for your products (Work in progress...)
