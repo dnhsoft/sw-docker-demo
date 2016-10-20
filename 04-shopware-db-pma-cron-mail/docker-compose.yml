@@ -1,5 +1,5 @@
 shop:
-  image: dnhsoft/shopware:5.2.2-php7
+  image: dnhsoft/shopware:5.2.9-php7
   links:
    - db
    - mailhog
