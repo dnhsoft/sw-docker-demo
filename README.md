@@ -3,7 +3,7 @@ Examples of how to run different configurations of Shopware shops with Docker.
 Tested with **docker 1.11.1** and **docker-compose 1.7.0**
 
 ## [Example 01](https://github.com/dnhsoft/sw-docker-demo/tree/master/01-empty-docker)
-Very basic introduction to Docker. Running an docker once to do some "work"
+Very basic introduction to Docker. Running a Docker container to do some "work"
 
 ## [Example 02](https://github.com/dnhsoft/sw-docker-demo/tree/master/02-a-process)
 Very basic introduction to Docker - continued. Running a simple waiting process.
@@ -24,13 +24,13 @@ Develop a plugin in several Shopware shop versions
 Behavioral Driven Development (BDD) on Shopware
 
 ## [Example 08](https://github.com/dnhsoft/sw-docker-demo/tree/master/08-logs)
-Professional logging - combine all logs into one Ellastic Search database
+Professional logging - combine all logs into one Elasticsearch database
 
 ## [Example 09](https://github.com/dnhsoft/sw-docker-demo/tree/master/09-proxy)
 Put a proxy wall 
 
 ## [Example 10](https://github.com/dnhsoft/sw-docker-demo/tree/master/10-s3)
-Simulate Amaozon S3 services to store the shop images
+Simulate Amazon S3 services to store the shop images
 
 ## [Example 11](https://github.com/dnhsoft/sw-docker-demo/tree/master/11-loadbal)
 Several Shopware instances with a simple load balancer
