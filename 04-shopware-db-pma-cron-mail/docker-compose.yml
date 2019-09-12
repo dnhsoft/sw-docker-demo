@@ -1,27 +1,45 @@
-shop:
-  image: dnhsoft/shopware:5.2.9-php7
-  links:
-   - db
-   - mailhog
-  ports:
-   - "8000:80"
+version: "2"
 
-db:
-  image: dnhsoft/mysql-utf8:5.7
-  volumes:
-   - ".database:/var/lib/mysql"
+services:
 
-pma:
-  image: dnhsoft/phpmyadmin:4.6.3
-  links:
-   - db
-  ports:
-   - "8001:80"
+  shop:
+    image: dnhsoft/shopware:5.5.7
+    links:
+      - mysql:db
+      - mailhog
+    ports:
+      - "8000:80"
+    volumes:
+      - "./volumes/shop/log:/shopware/var/log"
+      - "./volumes/shop/files:/shopware/files"
+      - "./volumes/shop/media:/shopware/media"
+    env_file:
+      - shop-variables-local.env
 
-mailhog:
-  image: mailhog/mailhog
-  expose:
-   - "1025"
-   - "8025"
-  ports:
-   - "8025:8025"
+  mysql:
+    image: mysql:5.7
+    volumes:
+    ##  this makes the mysql shopware friendly, otherwise we have some utf8 issues
+    #  - "./docker/mysql/mysqld_charset.cnf:/etc/mysql/conf.d/mysqld_charset.cnf"
+      - "./volumes/mysql:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+
+  pma:
+    image: phpmyadmin/phpmyadmin:4.8
+    links:
+      - mysql:db
+    ports:
+      - "8001:80"
+    environment:
+      PMA_USER: root
+      PMA_PASSWORD: 123456
+      
+
+  mailhog:
+    image: mailhog/mailhog
+    expose:
+      - "1025"
+      - "8025"
+    ports:
+      - "8025:8025"
