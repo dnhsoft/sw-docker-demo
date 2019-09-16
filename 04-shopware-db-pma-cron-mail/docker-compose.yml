@@ -3,7 +3,7 @@ version: "2"
 services:
 
   shop:
-    image: dnhsoft/shopware:5.5.7
+    image: dnhsoft/shopware:5.5.10
     links:
       - mysql:db
       - mailhog
