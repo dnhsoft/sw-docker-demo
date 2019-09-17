@@ -3,7 +3,7 @@ version: "2"
 services:
 
   shop:
-    image: dnhsoft/shopware:5.5.10
+    image: dnhsoft/shopware:5.6.1
     links:
       - mysql:db
       - mailhog
@@ -24,6 +24,7 @@ services:
       - "./volumes/mysql:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: 123456
+      TZ: Europe/Berlin
 
   pma:
     image: phpmyadmin/phpmyadmin:4.8
@@ -34,6 +35,7 @@ services:
     environment:
       PMA_USER: root
       PMA_PASSWORD: 123456
+      TZ: Europe/Berlin
       
 
   mailhog:
@@ -43,3 +45,9 @@ services:
       - "8025"
     ports:
       - "8025:8025"
+    environment:
+      TZ: Europe/Berlin
+
+   
+
+
