@@ -1,4 +1,0 @@
-shop:
-  image: dnhsoft/shopware:5.2.2-php7
-  ports:
-   - "8000:80"

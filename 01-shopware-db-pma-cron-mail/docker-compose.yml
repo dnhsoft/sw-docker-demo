@@ -3,7 +3,7 @@ version: "2"
 services:
 
   shop:
-    image: dnhsoft/shopware:5.6.1
+    image: dnhsoft/shopware:5.6.9
     links:
       - mysql:db
       - mailhog
@@ -16,6 +16,7 @@ services:
     env_file:
       - shop-variables-local.env
 
+
   mysql:
     image: mysql:5.7
     volumes:
@@ -25,6 +26,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       TZ: Europe/Berlin
+
 
   pma:
     image: phpmyadmin/phpmyadmin:4.8

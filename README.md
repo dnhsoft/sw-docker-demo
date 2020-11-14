@@ -2,16 +2,7 @@
 Examples of how to run different configurations of Shopware shops with Docker.  
 Tested with **docker 1.11.1** and **docker-compose 1.7.0**
 
-## [Example 01](https://github.com/dnhsoft/sw-docker-demo/tree/master/01-empty-docker)
-Very basic introduction to Docker. Running a Docker container to do some "work"
-
-## [Example 02](https://github.com/dnhsoft/sw-docker-demo/tree/master/02-a-process)
-Very basic introduction to Docker - continued. Running a simple waiting process.
-
-## [Example 03](https://github.com/dnhsoft/sw-docker-demo/tree/master/03-new-shopware)
-Run a Shopware shop without a database - just to check what's inside the Docker container.
-
-## [Example 04](https://github.com/dnhsoft/sw-docker-demo/tree/master/04-shopware-db-pma-cron-mail)
+## [Example 01](https://github.com/dnhsoft/sw-docker-demo/tree/master/01-shopware-db-pma-cron-mail)
 Run a fully functional Shopware with additional helper tools.
 
 ## [Example 05](https://github.com/dnhsoft/sw-docker-demo/tree/master/05-multishops)
@@ -35,5 +26,3 @@ Simulate Amazon S3 services to store the shop images
 ## [Example 11](https://github.com/dnhsoft/sw-docker-demo/tree/master/11-loadbal)
 Several Shopware instances with a simple load balancer
 
-## Example 12
-Elasticsearch for your products (Work in progress...)
